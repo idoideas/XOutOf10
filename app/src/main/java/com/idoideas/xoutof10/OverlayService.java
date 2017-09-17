@@ -15,6 +15,7 @@ import android.widget.RelativeLayout;
 import static android.content.res.Configuration.ORIENTATION_LANDSCAPE;
 import static android.content.res.Configuration.ORIENTATION_PORTRAIT;
 import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
+import static android.view.WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH;
 import static android.view.WindowManager.LayoutParams.TYPE_SYSTEM_OVERLAY;
 
 /**
@@ -36,14 +37,15 @@ public class OverlayService extends Service {
     public void drawPortait(){
         view = View.inflate(getApplicationContext(), R.layout.bump, null);
         WindowManager.LayoutParams params = new WindowManager.LayoutParams(
-                WindowManager.LayoutParams.MATCH_PARENT,
+                WindowManager.LayoutParams.WRAP_CONTENT,
                 100,
                 // Allows the view to be on top of the StatusBar
-                WindowManager.LayoutParams.TYPE_SYSTEM_ERROR,
+                WindowManager.LayoutParams.TYPE_SYSTEM_OVERLAY,
                 // Keeps the button presses from going to the background window
                 WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE |
                         // Enables the notification to recieve touch events
                         WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL |
+
                         // Draws over status bar
                         WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN,
                 PixelFormat.TRANSLUCENT);
@@ -56,15 +58,11 @@ public class OverlayService extends Service {
         view = View.inflate(getApplicationContext(), R.layout.bump_l, null);
         WindowManager.LayoutParams params = new WindowManager.LayoutParams(
                 100,
-                WindowManager.LayoutParams.MATCH_PARENT,
+                WindowManager.LayoutParams.WRAP_CONTENT,
                 // Allows the view to be on top of the StatusBar
                 WindowManager.LayoutParams.TYPE_SYSTEM_ERROR,
                 // Keeps the button presses from going to the background window
-                WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE |
-                        // Enables the notification to recieve touch events
-                        WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL |
-                        // Draws over status bar
-                        WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN,
+                WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
                 PixelFormat.TRANSLUCENT);
 
         params.gravity =  Gravity.LEFT;
