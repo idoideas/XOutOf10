@@ -32,4 +32,5 @@ Please notice that the app works on Android 6.0+.
 Tested on OnePlus 3T, 2017.
 
 ![Portait Screenshot](https://i.imgur.com/IMduTyi.jpg)
+![Mi Mix Photo](https://i.imgur.com/wIaOB1e.png)
 ![Landscape Screenshot](https://i.imgur.com/MWXdVr1.jpg)
