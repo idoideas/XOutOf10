@@ -8,16 +8,17 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="250dp"
         android:src="@drawable/iphonexui"/>
 
     <TextView
+        android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ever wanted to feel what it's like to have iPhone X,\nBut couldn't pay 999$?\n Here's your chance to try it."
         android:textAlignment="center"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="250dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -27,7 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Start"
-        android:layout_marginTop="360dp"
+        android:layout_below="@id/text"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="5dp"
         android:id="@+id/start"/>
@@ -47,5 +48,16 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@id/stop"
         />
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/banner_home_footer">
+    </com.google.android.gms.ads.AdView>
 
 </RelativeLayout>

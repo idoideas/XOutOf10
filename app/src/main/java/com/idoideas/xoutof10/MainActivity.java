@@ -12,7 +12,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 public class MainActivity extends AppCompatActivity {
+
+    private AdView mAdView;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -47,6 +52,13 @@ public class MainActivity extends AppCompatActivity {
                 checkDrawOverlayPermission();
             }
         });
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice("273C10F6276D3F0FA82BA38A4818A606")
+                .build();
+        mAdView.loadAd(adRequest);
+
     }
 
     public void start(){
@@ -79,9 +91,26 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
+        if (mAdView != null) {
+            mAdView.destroy();
+        }
         super.onDestroy();
         stop();
     }
 
+    @Override
+    protected void onPause() {
+        if (mAdView != null) {
+            mAdView.pause();
+        }
+        super.onPause();
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (mAdView != null) {
+            mAdView.resume();
+        }
+    }
 }
