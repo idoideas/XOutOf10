@@ -9,11 +9,15 @@ Your Apple fanboys probably said it's not that noticeable, and that you haven't 
 
 Well, you won't pay 999$ just to test it. And now, you don't need to!
 
-Introducing ***XOutOf10***, a simulation of iPhone X's bump for any Android device (running Android Marshmallow 6.0+), so you could feel how it's like.
+Introducing ***XOutOf10*** *by Idoideas*, a simulation of iPhone X's bump for any Android device (running Android Marshmallow 6.0+), so you could feel how it's like.
 
 ## Download
 
-You can [download the APK right here](https://github.com/idoideas/XOutOf10/blob/master/XOutOf10.apk?raw=true). Please notice that the app works on Android 6.0+.
+You can [download the APK right here](https://github.com/idoideas/XOutOf10/blob/master/XOutOf10.apk?raw=true).
+
+Please notice that the app works on Android 6.0+.
+
+**Android 8.0 Oreo users:** Please note that the bump will be hidden when you expand your status bar. That occurs due to Android API limitations set by Google.
 
 ## How to Enable
 
