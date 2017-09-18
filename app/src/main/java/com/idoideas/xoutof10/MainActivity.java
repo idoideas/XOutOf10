@@ -12,8 +12,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -67,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void stop(){
         stopService(new Intent(this, OverlayService.class));
+        showFullScreenAd();
     }
 
     /** code to post/handler request for permission */
@@ -112,5 +115,27 @@ public class MainActivity extends AppCompatActivity {
         if (mAdView != null) {
             mAdView.resume();
         }
+    }
+
+    public void showFullScreenAd(){
+        final InterstitialAd mInterstitialAd = new InterstitialAd(this);
+
+        // set the ad unit ID
+        mInterstitialAd.setAdUnitId(getString(R.string.interstitial_full_screen));
+
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice("273C10F6276D3F0FA82BA38A4818A606")
+                .build();
+
+        // Load ads into Interstitial Ads
+        mInterstitialAd.loadAd(adRequest);
+
+        mInterstitialAd.setAdListener(new AdListener() {
+            public void onAdLoaded() {
+                if (mInterstitialAd.isLoaded()) {
+                    mInterstitialAd.show();
+                }
+            }
+        });
     }
 }
