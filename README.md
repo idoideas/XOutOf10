@@ -13,7 +13,11 @@ Introducing ***XOutOf10***, a simulation of iPhone X's bump for any Android devi
 
 ## Download
 
-You can [download the APK right here](https://github.com/idoideas/XOutOf10/blob/master/XOutOf10.apk?raw=true). Please notice that the app works on Android 6.0+.
+You can [download the APK right here](https://github.com/idoideas/XOutOf10/blob/master/XOutOf10.apk?raw=true).
+
+Please notice that the app works on Android 6.0+.
+
+**Android 8.0 Oreo users:** Please note that the bump will be hidden when you expand your status bar. That occurs due to Android API limitations set by Google.
 
 ## How to Enable
 
