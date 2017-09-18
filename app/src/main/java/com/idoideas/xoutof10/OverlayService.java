@@ -100,14 +100,12 @@ public class OverlayService extends Service {
     public float getXPPI(){
         DisplayMetrics metrics = new DisplayMetrics();
         windowManager.getDefaultDisplay().getMetrics(metrics);
-        Log.w("xdpi", metrics.xdpi+"");
         return metrics.xdpi;
     }
 
     public float getYPPI(){
         DisplayMetrics metrics = new DisplayMetrics();
         windowManager.getDefaultDisplay().getMetrics(metrics);
-        Log.w("ydpi", metrics.ydpi+"");
         return metrics.ydpi;
     }
 }
