@@ -9,7 +9,7 @@ Your Apple fanboys probably said it's not that noticeable, and that you haven't 
 
 Well, you won't pay 999$ just to test it. And now, you don't need to!
 
-Introducing ***XOutOf10***, a simulation of iPhone X's bump for any Android device (running Android Marshmallow 6.0+), so you could feel how it's like.
+Introducing ***XOutOf10*** *by Idoideas*, a simulation of iPhone X's bump for any Android device (running Android Marshmallow 6.0+), so you could feel how it's like.
 
 ## Download
 
