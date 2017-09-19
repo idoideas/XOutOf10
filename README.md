@@ -41,3 +41,7 @@ Tested on OnePlus 3T, 2017.
 
 ![Portait Screenshot](https://i.imgur.com/Wq429gQ.jpg) ![Mi Mix Photo](https://i.imgur.com/rpkX50w.png)
 ![Landscape Screenshot](https://i.imgur.com/MWXdVr1.jpg)
+
+## Other Platforms
+
+* [Web Version by pfrankov](https://github.com/pfrankov/iphone-x-notch)
