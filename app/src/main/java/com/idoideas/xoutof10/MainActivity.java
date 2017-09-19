@@ -1,6 +1,8 @@
 package com.idoideas.xoutof10;
 
+import android.app.ActivityManager;
 import android.app.Service;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
@@ -65,19 +67,24 @@ public class MainActivity extends AppCompatActivity {
 
         mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder()
-                .addTestDevice("")
+                .addTestDevice("273C10F6276D3F0FA82BA38A4818A606")
                 .build();
         mAdView.loadAd(adRequest);
 
     }
 
     public void start(){
-        startService(new Intent(this, OverlayService.class));
+        if(!isMyServiceRunning(OverlayService.class)){
+            startService(new Intent(this, OverlayService.class));
+        }
     }
 
     public void stop(){
-        stopService(new Intent(this, OverlayService.class));
-        showFullScreenAd();
+        if(isMyServiceRunning(OverlayService.class)){
+            stopService(new Intent(this, OverlayService.class));
+            OverlayService.removeView();
+            showFullScreenAd();
+        }
     }
 
     /** code to post/handler request for permission */
@@ -106,7 +113,6 @@ public class MainActivity extends AppCompatActivity {
             mAdView.destroy();
         }
         super.onDestroy();
-        stop();
     }
 
     @Override
@@ -132,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
         mInterstitialAd.setAdUnitId(getString(R.string.interstitial_full_screen));
 
         AdRequest adRequest = new AdRequest.Builder()
-                .addTestDevice("")
+                .addTestDevice("273C10F6276D3F0FA82BA38A4818A606")
                 .build();
 
         // Load ads into Interstitial Ads
@@ -145,5 +151,15 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private boolean isMyServiceRunning(Class<?> serviceClass) {
+        ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+        for (ActivityManager.RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE)) {
+            if (serviceClass.getName().equals(service.service.getClassName())) {
+                return true;
+            }
+        }
+        return false;
     }
 }

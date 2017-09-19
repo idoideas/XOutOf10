@@ -24,8 +24,8 @@ import static android.view.WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY;
 
 public class OverlayService extends Service {
 
-    WindowManager windowManager;
-    View view;
+    static WindowManager windowManager;
+    static View view;
 
     @Override
     public void onCreate() {
@@ -69,7 +69,7 @@ public class OverlayService extends Service {
         windowManager.addView(view , params);
     }
 
-    public void removeView(){
+    public static void removeView(){
         windowManager.removeView(view);
     }
 
@@ -80,7 +80,6 @@ public class OverlayService extends Service {
 
     @Override
     public void onDestroy() {
-        removeView();
         super.onDestroy();
     }
 
