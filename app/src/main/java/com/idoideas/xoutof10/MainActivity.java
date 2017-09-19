@@ -26,17 +26,21 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button start = findViewById(R.id.start);
+        final Button start = findViewById(R.id.start);
         Button stop = findViewById(R.id.stop);
         Button drawOver = findViewById(R.id.drawover);
 
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (Settings.canDrawOverlays(getApplicationContext())){
-                    start();
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+                    if (Settings.canDrawOverlays(getApplicationContext())){
+                        start();
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Please permit drawing over apps.", Toast.LENGTH_SHORT).show();
+                    }
                 } else {
-                    Toast.makeText(getApplicationContext(), "Please permit drawing over apps.", Toast.LENGTH_LONG).show();
+                    start();
                 }
             }
         });
@@ -51,13 +55,17 @@ public class MainActivity extends AppCompatActivity {
         drawOver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                checkDrawOverlayPermission();
+                if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+                    checkDrawOverlayPermission();
+                } else {
+                    Toast.makeText(getApplicationContext(), "You don't need it.\nYou run Android lower than 6.0.\nClick \"Start\" and enjoy!", Toast.LENGTH_LONG).show();
+                }
             }
         });
 
         mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder()
-                .addTestDevice("273C10F6276D3F0FA82BA38A4818A606")
+                .addTestDevice("")
                 .build();
         mAdView.loadAd(adRequest);
 
@@ -124,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
         mInterstitialAd.setAdUnitId(getString(R.string.interstitial_full_screen));
 
         AdRequest adRequest = new AdRequest.Builder()
-                .addTestDevice("273C10F6276D3F0FA82BA38A4818A606")
+                .addTestDevice("")
                 .build();
 
         // Load ads into Interstitial Ads

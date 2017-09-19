@@ -43,7 +43,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="If it's your first run, premit drawing over apps"
+        android:text="If it's your first run, permit drawing over apps"
         android:id="@+id/drawover"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/stop"
