@@ -38,7 +38,7 @@ You can [download the latest APK right here](https://github.com/idoideas/XOutOf1
 * Mashable: [This app lets you add an iPhone X 'notch' to any Android device](http://mashable.com/2017/09/18/iphone-x-notch-android-app/)
 * TheNextWeb: [Bored programmer built an app that puts the iPhone X notch on any Android phone](https://thenextweb.com/apps/2017/09/18/iphone-x-notch-android-phone/)
 * Gizmodo: [This Free App Adds an iPhone X Notch to Your Android Phone](http://gizmodo.com/this-free-app-adds-an-iphone-x-notch-to-your-android-ph-1818540557)
-* The Lad Bible: [Android Developer Trolls Apple By 'Copying' iPhone X Feature](http://www.ladbible.com/technology/technology-android-developer-trolls-apple-by-copying-iphone-x-feature-20170919?c=1505804334722)
+* Lad Bible: [Android Developer Trolls Apple By 'Copying' iPhone X Feature](http://www.ladbible.com/technology/technology-android-developer-trolls-apple-by-copying-iphone-x-feature-20170919?c=1505804334722)
 
 ## Screenshots
 
