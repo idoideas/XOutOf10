@@ -19,6 +19,7 @@ Introducing ***XOutOf10*** *by Idoideas*, a simulation of iPhone X's notch for a
 You can [download the latest APK right here](https://github.com/idoideas/XOutOf10/blob/master/XOutOf10.apk?raw=true), or [download the app directly from the Play Store](https://play.google.com/store/apps/details?id=com.idoideas.xoutof10).
 
 ~~Please notice that the app works on Android 6.0+.~~
+
 **Now supports all Android devices, all the way back to Ice Cream Sandwich 4.0!**
 
 **Android 6.0+ Users**: In your first run, please make sure you "permit drawing over apps".
