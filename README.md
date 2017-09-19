@@ -33,6 +33,7 @@ Please notice that the app works on Android 6.0+.
 ## In the press
 
 * 9To5Google: [This Android app lets you 'embrace the notch' from the iPhone X on your phone](https://9to5google.com/2017/09/18/android-iphone-x-notch-simulator/)
+* Mashable: [This app lets you add an iPhone X 'notch' to any Android device](http://mashable.com/2017/09/18/iphone-x-notch-android-app/)
 * TheNextWeb: [Bored programmer built an app that puts the iPhone X notch on any Android phone](https://thenextweb.com/apps/2017/09/18/iphone-x-notch-android-phone/)
 
 ## Screenshots
