@@ -1,7 +1,7 @@
 # XOutOf10
 You saw Apple September 2017 event. You probably heard about of Apple's last innvoation, iPhone X (TEN).
 
-You, the average Android user, probably had a laugh on Apple users about the new camera bump that covers the screen's content.
+You, the average Android user, probably had a laugh on Apple users about the new camera notch that covers the screen's content.
 
 It is funny, I agree.
 
@@ -9,15 +9,17 @@ Your Apple fanboys probably said it's not that noticeable, and that you haven't 
 
 Well, you won't pay 999$ just to test it. And now, you don't need to!
 
-Introducing ***XOutOf10*** *by Idoideas*, a simulation of iPhone X's bump for any Android device (running Android Marshmallow 6.0+), so you could feel how it's like.
+Introducing ***XOutOf10*** *by Idoideas*, a simulation of iPhone X's notch for any Android device (running Android Marshmallow 6.0+), so you could feel how it's like.
 
 ## Download
 
-You can [download the APK right here](https://github.com/idoideas/XOutOf10/blob/master/XOutOf10.apk?raw=true).
+You can [download the latest APK right here](https://github.com/idoideas/XOutOf10/blob/master/XOutOf10.apk?raw=true), or
+
+![https://i.imgur.com/aFvzuIb.png](https://play.google.com/store/apps/details?id=com.idoideas.xoutof10)
 
 Please notice that the app works on Android 6.0+.
 
-**Android 8.0 Oreo users:** Please note that the bump will be hidden when you expand your status bar. That occurs due to Android API limitations set by Google.
+**Android 8.0 Oreo users:** Please note that the notch will be hidden when you expand your status bar. That occurs due to Android API limitations set by Google.
 
 ## How to Enable
 
@@ -25,7 +27,12 @@ Please notice that the app works on Android 6.0+.
 2. If it's your first time, click on the "Permit Drawing Over Apps" and allow it.
 3. Click on "Start".
 
-**Notice!** To stop the simulation, click on "Stop" within the app or close it from the recent list.
+**Notice!** To stop the simulation, click on "Stop" within the app.
+
+## In the press
+
+* 9To5Google: [This Android app lets you 'embrace the notch' from the iPhone X on your phone](https://9to5google.com/2017/09/18/android-iphone-x-notch-simulator/)
+* TheNextWeb: [Bored programmer built an app that puts the iPhone X notch on any Android phone](https://thenextweb.com/apps/2017/09/18/iphone-x-notch-android-phone/)
 
 ## Screenshots
 
