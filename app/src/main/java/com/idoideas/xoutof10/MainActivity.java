@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
         mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder()
-                .addTestDevice("273C10F6276D3F0FA82BA38A4818A606")
+                .addTestDevice("")
                 .build();
         mAdView.loadAd(adRequest);
 
