@@ -1,5 +1,7 @@
 # XOutOf10
 
+[*Poll: Would you like an Essential Phone version?*](http://www.strawpoll.me/13964446)
+
 [![Get it in the Play Store](https://i.imgur.com/GcvRPKp.png)](https://play.google.com/store/apps/details?id=com.idoideas.xoutof10)
 
 You saw Apple September 2017 event. You probably heard about of Apple's last innvoation, iPhone X (TEN).
