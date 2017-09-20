@@ -41,6 +41,10 @@ You can [download the latest APK right here](https://github.com/idoideas/XOutOf1
 * TheNextWeb: [Bored programmer built an app that puts the iPhone X notch on any Android phone](https://thenextweb.com/apps/2017/09/18/iphone-x-notch-android-phone/)
 * Gizmodo: [This Free App Adds an iPhone X Notch to Your Android Phone](http://gizmodo.com/this-free-app-adds-an-iphone-x-notch-to-your-android-ph-1818540557)
 * Lad Bible: [Android Developer Trolls Apple By 'Copying' iPhone X Feature](http://www.ladbible.com/technology/technology-android-developer-trolls-apple-by-copying-iphone-x-feature-20170919?c=1505804334722)
+* The Daily Dot: [This new app replicates the iPhone X’s most distinctive feature](https://www.dailydot.com/debug/xoutof10-app-android-iphone-x-notch/)
+* INSIDE 硬塞的網路趨勢觀察: [想要 iPhone X？這個 App 讓你的 Android 手機也能長出特色「瀏海」](https://www.inside.com.tw/2017/09/19/this-app-lets-you-add-an-iphone-x-notch-to-any-android-phone)
+* Baidu 百家号 - 零镜网: [提前体验iPhone X？这大概是果X被黑的最惨的一次](http://baijiahao.baidu.com/s?id=1578964205253733354)
+* 威锋网新闻: [用安卓机体验iPhone X刘海?这App帮你](http://www.feng.com/iPhone/news/2017-09-19/Experience-iPhone-X-bangs-with-android-phones_691300.shtml)
 
 ## Screenshots
 
