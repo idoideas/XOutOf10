@@ -65,12 +65,14 @@ public class OverlayService extends Service {
                 WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
                 PixelFormat.TRANSLUCENT);
 
-        params.gravity =  Gravity.LEFT;
+        params.gravity =  Gravity.START;
         windowManager.addView(view , params);
     }
 
     public static void removeView(){
-        windowManager.removeView(view);
+        if(view!=null && windowManager!=null){
+            windowManager.removeView(view);
+        }
     }
 
     @Override
