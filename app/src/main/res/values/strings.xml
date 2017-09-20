@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">XOutOf10</string>
-    <string name="banner_home_footer"></string>
-    <string name="interstitial_full_screen"></string>
+    <string name="banner_home_footer">ca-app-pub-9851487072584209/9196412250</string>
+    <string name="interstitial_full_screen">ca-app-pub-9851487072584209/4916888912</string>
+    <string name="test_device_id">273C10F6276D3F0FA82BA38A4818A606</string>
 </resources>

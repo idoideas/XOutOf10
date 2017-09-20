@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
         mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder()
-                .addTestDevice("")
+                .addTestDevice(getString(R.string.test_device_id))
                 .build();
         mAdView.loadAd(adRequest);
 
@@ -143,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
         mInterstitialAd.setAdUnitId(getString(R.string.interstitial_full_screen));
 
         AdRequest adRequest = new AdRequest.Builder()
-                .addTestDevice("")
+                .addTestDevice(getString(R.string.test_device_id))
                 .build();
 
         // Load ads into Interstitial Ads
