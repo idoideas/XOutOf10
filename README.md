@@ -1,6 +1,6 @@
 # XOutOf10
 
-[*Poll: Would you like an Essential Phone version?*](http://www.strawpoll.me/13964446)
+[*Essential Phone's version is also available, ThisIsEssential is live!*](https://github.com/idoideas/ThisIsEssential)
 
 [![Get it in the Play Store](https://i.imgur.com/GcvRPKp.png)](https://play.google.com/store/apps/details?id=com.idoideas.xoutof10)
 
