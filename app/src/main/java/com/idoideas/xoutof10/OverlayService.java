@@ -26,6 +26,8 @@ public class OverlayService extends Service {
 
     static WindowManager windowManager;
     static View view;
+    final double wParam = 2;
+    final double hParam = 0.24;
 
     @Override
     public void onCreate() {
@@ -37,8 +39,8 @@ public class OverlayService extends Service {
     public void drawPortait(){
         view = View.inflate(getApplicationContext(), R.layout.bump, null);
         WindowManager.LayoutParams params = new WindowManager.LayoutParams(
-                (int)(2*getYPPI()),
-                (int)(0.24*getXPPI()),
+                (int)(wParam*getYPPI()),
+                (int)(hParam*getXPPI()),
                 // Allows the view to be on top of the StatusBar
                 Build.VERSION.SDK_INT < 26 ? WindowManager.LayoutParams.TYPE_SYSTEM_OVERLAY : TYPE_APPLICATION_OVERLAY,
                 // Keeps the button presses from going to the background window
@@ -57,8 +59,8 @@ public class OverlayService extends Service {
     public void drawLandscape(){
         view = View.inflate(getApplicationContext(), R.layout.bump_l, null);
         WindowManager.LayoutParams params = new WindowManager.LayoutParams(
-                (int)(0.24*getYPPI()),
-                (int)(2*getXPPI()),
+                (int)(hParam*getYPPI()),
+                (int)(wParam*getXPPI()),
                 // Allows the view to be on top of the StatusBar
                 Build.VERSION.SDK_INT < 26 ? WindowManager.LayoutParams.TYPE_SYSTEM_OVERLAY : TYPE_APPLICATION_OVERLAY,
                 // Keeps the button presses from going to the background window
@@ -101,12 +103,14 @@ public class OverlayService extends Service {
     public float getXPPI(){
         DisplayMetrics metrics = new DisplayMetrics();
         windowManager.getDefaultDisplay().getMetrics(metrics);
+        Log.w("XDPI", metrics.xdpi+"");
         return metrics.xdpi;
     }
 
     public float getYPPI(){
         DisplayMetrics metrics = new DisplayMetrics();
         windowManager.getDefaultDisplay().getMetrics(metrics);
+        Log.w("YDPI", metrics.xdpi+"");
         return metrics.ydpi;
     }
 }
