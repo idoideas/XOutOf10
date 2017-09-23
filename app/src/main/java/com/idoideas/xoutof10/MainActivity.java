@@ -12,12 +12,8 @@ import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import com.android.billingclient.api.BillingClient;
@@ -37,7 +33,6 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private AdView mAdView;
-    private WindowManager windowManager;
     private BillingClient mBillingClient;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -45,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        windowManager =  (WindowManager) getSystemService(WINDOW_SERVICE);
 
         mBillingClient = BillingClient.newBuilder(this).setListener(new PurchasesUpdatedListener() {
             @Override
@@ -124,20 +118,25 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onConsumeResponse(@BillingClient.BillingResponse int responseCode, String outToken) {
                         if (responseCode == BillingClient.BillingResponse.OK) {
-                            // Handle the success of the consume operation.
-                            // For example, increase the number of coins inside the user's basket.
+                            Toast.makeText(getApplicationContext(), "Thank you so much for your donation!", Toast.LENGTH_LONG).show();
                         }
                     }};
-                for (int i = 0; i<purchasesResult.getPurchasesList().size(); i++){
-                    mBillingClient.consumeAsync(purchasesResult.getPurchasesList().get(i).getPurchaseToken(), listener);
+                if (purchasesResult!=null){
+                    if(purchasesResult.getPurchasesList()!=null){
+                        if(purchasesResult.getPurchasesList().size()>0){
+                            for (int i = 0; i<purchasesResult.getPurchasesList().size(); i++){
+                                mBillingClient.consumeAsync(purchasesResult.getPurchasesList().get(i).getPurchaseToken(), listener);
+                            }
+                        }
+                    }
                 }
+
             }
         });
 
         mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder()
                 .addTestDevice(getString(R.string.test_device_id))
-                .addTestDevice("B53868878BCBC97153D1E113A9B453A6")
                 .build();
         mAdView.loadAd(adRequest);
     }
@@ -212,7 +211,6 @@ public class MainActivity extends AppCompatActivity {
 
         AdRequest adRequest = new AdRequest.Builder()
                 .addTestDevice(getString(R.string.test_device_id))
-                .addTestDevice("B53868878BCBC97153D1E113A9B453A6")
                 .build();
 
         // Load ads into Interstitial Ads

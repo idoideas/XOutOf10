@@ -9,17 +9,15 @@ import android.os.Build;
 import android.os.IBinder;
 import android.util.DisplayMetrics;
 import android.util.Log;
-import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
 
 import static android.content.res.Configuration.ORIENTATION_LANDSCAPE;
 import static android.content.res.Configuration.ORIENTATION_PORTRAIT;
-import static android.view.WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY;
 
 /**
- * Created by Shayevitz on 17/09/2017.
+ * Created by Idoideas on 17/09/2017.
  */
 
 public class OverlayService extends Service {
@@ -37,12 +35,18 @@ public class OverlayService extends Service {
     }
 
     public void drawPortait(){
+        int overlayType = 0;
+        if(Build.VERSION.SDK_INT < Build.VERSION_CODES.O){
+            overlayType = WindowManager.LayoutParams.TYPE_SYSTEM_OVERLAY;
+        } else {
+            overlayType = WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY;
+        }
         view = View.inflate(getApplicationContext(), R.layout.bump, null);
         WindowManager.LayoutParams params = new WindowManager.LayoutParams(
                 (int)(wParam*getYPPI()),
                 (int)(hParam*getXPPI()),
                 // Allows the view to be on top of the StatusBar
-                Build.VERSION.SDK_INT < 26 ? WindowManager.LayoutParams.TYPE_SYSTEM_OVERLAY : TYPE_APPLICATION_OVERLAY,
+                 overlayType,
                 // Keeps the button presses from going to the background window
                 WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE |
                         // Enables the notification to recieve touch events
@@ -57,12 +61,18 @@ public class OverlayService extends Service {
     }
 
     public void drawLandscape(){
+        int overlayType = 0;
+        if(Build.VERSION.SDK_INT < Build.VERSION_CODES.O){
+            overlayType = WindowManager.LayoutParams.TYPE_SYSTEM_OVERLAY;
+        } else {
+            overlayType = WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY;
+        }
         view = View.inflate(getApplicationContext(), R.layout.bump_l, null);
         WindowManager.LayoutParams params = new WindowManager.LayoutParams(
                 (int)(hParam*getYPPI()),
                 (int)(wParam*getXPPI()),
                 // Allows the view to be on top of the StatusBar
-                Build.VERSION.SDK_INT < 26 ? WindowManager.LayoutParams.TYPE_SYSTEM_OVERLAY : TYPE_APPLICATION_OVERLAY,
+                overlayType,
                 // Keeps the button presses from going to the background window
                 WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
                 PixelFormat.TRANSLUCENT);
@@ -103,14 +113,20 @@ public class OverlayService extends Service {
     public float getXPPI(){
         DisplayMetrics metrics = new DisplayMetrics();
         windowManager.getDefaultDisplay().getMetrics(metrics);
-        Log.w("XDPI", metrics.xdpi+"");
-        return metrics.xdpi;
+        float xdpi = metrics.xdpi;
+        if(xdpi<320){
+            return 320;
+        }
+        return xdpi;
     }
 
     public float getYPPI(){
         DisplayMetrics metrics = new DisplayMetrics();
         windowManager.getDefaultDisplay().getMetrics(metrics);
-        Log.w("YDPI", metrics.xdpi+"");
-        return metrics.ydpi;
+        float ydpi = metrics.ydpi;
+        if(ydpi<320){
+            return 320;
+        }
+        return ydpi;
     }
 }
