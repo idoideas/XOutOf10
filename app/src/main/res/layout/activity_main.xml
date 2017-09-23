@@ -40,6 +40,18 @@
         android:layout_below="@id/start"
         />
 
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Change DPI\n(Advanced)"
+        android:id="@+id/changedpi"
+        android:textSize="12sp"
+        android:layout_toRightOf="@id/start"
+        android:layout_marginLeft="20dp"
+        android:layout_alignTop="@id/start"
+        />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -47,7 +59,7 @@
         android:id="@+id/donate"
         android:layout_toRightOf="@id/start"
         android:layout_marginLeft="30dp"
-        android:layout_below="@id/start"/>
+        android:layout_alignTop="@id/stop"/>
 
     <Button
         android:id="@+id/drawover"

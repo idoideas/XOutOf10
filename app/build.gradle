@@ -7,8 +7,8 @@ android {
         applicationId "com.idoideas.xoutof10"
         minSdkVersion 15
         targetSdkVersion 26
-        versionCode 8
-        versionName "1.1.5"
+        versionCode 9
+        versionName "1.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

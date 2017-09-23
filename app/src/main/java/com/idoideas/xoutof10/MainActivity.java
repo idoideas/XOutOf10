@@ -12,7 +12,9 @@ import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -40,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        DPIGetter.resetDPI((WindowManager) getSystemService(WINDOW_SERVICE));
 
         mBillingClient = BillingClient.newBuilder(this).setListener(new PurchasesUpdatedListener() {
             @Override
@@ -65,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
         Button stop = findViewById(R.id.stop);
         Button drawOver = findViewById(R.id.drawover);
         Button donate = findViewById(R.id.donate);
+        Button changeDPI = findViewById(R.id.changedpi);
 
         start.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -131,6 +135,13 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
 
+            }
+        });
+
+        changeDPI.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DPIGetter.startDPIChangeDialog(MainActivity.this);
             }
         });
 
@@ -234,5 +245,4 @@ public class MainActivity extends AppCompatActivity {
         }
         return false;
     }
-
 }

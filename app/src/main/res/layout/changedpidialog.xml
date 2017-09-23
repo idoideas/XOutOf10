@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_root"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold|italic"
+        android:textSize="20sp"
+        android:text="Please notice!" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold|italic"
+        android:textSize="17sp"
+        android:layout_below="@id/textView"
+        android:text="Changing the DPI settings in this app is usually not needed.\n\n
+Please don't change it if you don't need to,\n
+or not aware of your actions." />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="XDPI: "
+        android:id="@+id/xdpitext"
+        android:layout_marginBottom="15dp"
+        android:layout_alignBottom="@id/xdpi"/>
+
+    <EditText
+        android:id="@+id/xdpi"
+        android:layout_toRightOf="@id/xdpitext"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:layout_below="@id/textView2">
+
+        <requestFocus />
+
+    </EditText>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="YDPI: "
+        android:id="@+id/ydpitext"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_alignBottom="@id/ydpi"
+        android:layout_toRightOf="@id/xdpi"/>
+
+    <EditText
+        android:id="@+id/ydpi"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView2"
+        android:layout_marginLeft="5dp"
+        android:inputType="numberDecimal"
+        android:layout_toRightOf="@id/ydpitext">
+
+    </EditText>
+
+</RelativeLayout>

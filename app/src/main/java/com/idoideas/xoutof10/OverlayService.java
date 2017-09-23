@@ -15,6 +15,7 @@ import android.view.WindowManager;
 
 import static android.content.res.Configuration.ORIENTATION_LANDSCAPE;
 import static android.content.res.Configuration.ORIENTATION_PORTRAIT;
+import static android.util.DisplayMetrics.DENSITY_DEVICE_STABLE;
 
 /**
  * Created by Idoideas on 17/09/2017.
@@ -43,8 +44,8 @@ public class OverlayService extends Service {
         }
         view = View.inflate(getApplicationContext(), R.layout.bump, null);
         WindowManager.LayoutParams params = new WindowManager.LayoutParams(
-                (int)(wParam*getYPPI()),
-                (int)(hParam*getXPPI()),
+                (int)(wParam*DPIGetter.getYDPI()),
+                (int)(hParam*DPIGetter.getXDPI()),
                 // Allows the view to be on top of the StatusBar
                  overlayType,
                 // Keeps the button presses from going to the background window
@@ -69,8 +70,8 @@ public class OverlayService extends Service {
         }
         view = View.inflate(getApplicationContext(), R.layout.bump_l, null);
         WindowManager.LayoutParams params = new WindowManager.LayoutParams(
-                (int)(hParam*getYPPI()),
-                (int)(wParam*getXPPI()),
+                (int)(hParam*DPIGetter.getYDPI()),
+                (int)(wParam*DPIGetter.getXDPI()),
                 // Allows the view to be on top of the StatusBar
                 overlayType,
                 // Keeps the button presses from going to the background window
@@ -108,25 +109,5 @@ public class OverlayService extends Service {
             removeView();
             drawPortait();
         }
-    }
-
-    public float getXPPI(){
-        DisplayMetrics metrics = new DisplayMetrics();
-        windowManager.getDefaultDisplay().getMetrics(metrics);
-        float xdpi = metrics.xdpi;
-        if(xdpi<320){
-            return 320;
-        }
-        return xdpi;
-    }
-
-    public float getYPPI(){
-        DisplayMetrics metrics = new DisplayMetrics();
-        windowManager.getDefaultDisplay().getMetrics(metrics);
-        float ydpi = metrics.ydpi;
-        if(ydpi<320){
-            return 320;
-        }
-        return ydpi;
     }
 }
